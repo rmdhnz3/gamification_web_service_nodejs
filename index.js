@@ -166,7 +166,7 @@ app.get('/api/user_badges', (req, res) => {
 })
 
 app.get('/api/user_badges/claim/:id', (req, res) => {
-    const queryUpdate = 'UPDATE user_badges SET is_claimed = 1 WHERE id=?'
+    const queryUpdate = 'UPDATE user_badges SET is_claimed = 1 WHERE badge_id=?'
 
     conn.query(queryUpdate, req.params.id, (err, rows, field) => {
         if (err) {
